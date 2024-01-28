@@ -32,14 +32,18 @@ func _ready():
 	# Turn plane around if off screen too long
 	$OffScreenTimer.timeout.connect(_turnaround)
 	$LostPlaneTimer.timeout.connect(_lost_plane)
+	
+	#$BulletTimer.timeout.connect(_shoot)
 
 func _lost_plane() -> void:
+	print('lost')
 	var middle = get_viewport_rect().position / 2.0
 	rotation = position.direction_to(middle).angle()
 	flat_motion = false
 	$LostPlaneTimer.start
 
 func _turnaround() -> void:
+	print('Turnaround')
 	if global_position.x < 0:
 		rotation = 0
 		flat_motion = true
@@ -50,9 +54,7 @@ func _turnaround() -> void:
 	else:
 		rotation = deg_to_rad(180)
 		flat_motion = true
-		
 
-		
 func crash() -> void:
 	health = 0
 	is_alive = false
@@ -76,7 +78,6 @@ func _process(delta: float) -> void:
 	rotation += turn * _get_rotation_speed()
 	
 	var rotation_vector = Vector2(1, 0).rotated(rotation)
-	print(rotation_vector)
 	var thrust = THRUST * rotation_vector
 	var drag_area = 1 + DRAG_PENALTY*(1 - cos(2*(velocity.angle() - rotation)))
 	velocity += thrust
@@ -93,7 +94,11 @@ func _process(delta: float) -> void:
 	
 	# Move the plane
 	move_and_slide()
-
-#func shoot():
-	## Call your shoot logic here
-	#pass
+#
+#func _shoot():
+	#print('_shoot()')
+	#var bullet = preload("res://plane/bullet.tscn").instantiate()
+	#bullet.global_position = self.global_position#Vector2(100, 100)
+	##bullet.rotation = self.rotation
+	#get_parent().add_child(bullet)
+	#print(bullet.global_position)
