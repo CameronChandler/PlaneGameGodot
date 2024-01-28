@@ -94,11 +94,11 @@ func _process(delta: float) -> void:
 	
 	# Move the plane
 	move_and_slide()
-#
-#func _shoot():
-	#print('_shoot()')
-	#var bullet = preload("res://plane/bullet.tscn").instantiate()
-	#bullet.global_position = self.global_position#Vector2(100, 100)
-	##bullet.rotation = self.rotation
-	#get_parent().add_child(bullet)
-	#print(bullet.global_position)
+
+func _shoot():
+	print('_shoot()')
+	var bullet = preload("res://plane/bullet.tscn").instantiate()
+	bullet.global_position = self.global_position#Vector2(100, 100)
+	#bullet.rotation = self.rotation
+	get_parent().add_child(bullet)
+	print(bullet.global_position)
