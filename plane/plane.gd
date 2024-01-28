@@ -33,7 +33,7 @@ func _ready():
 	$OffScreenTimer.timeout.connect(_turnaround)
 	$LostPlaneTimer.timeout.connect(_lost_plane)
 	
-	#$BulletTimer.timeout.connect(_shoot)
+	$BulletTimer.timeout.connect(_shoot)
 
 func _lost_plane() -> void:
 	print('lost')
@@ -96,9 +96,7 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func _shoot():
-	print('_shoot()')
 	var bullet = preload("res://plane/bullet.tscn").instantiate()
-	bullet.global_position = self.global_position#Vector2(100, 100)
-	#bullet.rotation = self.rotation
 	get_parent().add_child(bullet)
-	print(bullet.global_position)
+	bullet.global_position = $Sprite2D/BulletMarker.global_position
+	bullet.rotation = rotation

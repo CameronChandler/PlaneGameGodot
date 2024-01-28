@@ -10,8 +10,13 @@ size = Vector2(62, 11)
 script = ExtResource("1_d7i8q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("1_okj74")
+
+[node name="BulletMarker" type="Marker2D" parent="Sprite2D"]
+position = Vector2(89, 5)
+scale = Vector2(1, 1)
 
 [node name="OffScreenTimer" type="Timer" parent="."]
 wait_time = 0.6
@@ -28,8 +33,5 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_gl00i")
 
 [node name="BulletTimer" type="Timer" parent="."]
+wait_time = 0.15
 autostart = true
-
-[node name="BulletMarker" type="Marker2D" parent="."]
-position = Vector2(31.15, 1.75)
-scale = Vector2(0.35, 0.35)
