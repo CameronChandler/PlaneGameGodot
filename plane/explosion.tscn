@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://begncvhb1l33d"]
+
+[ext_resource type="Texture2D" uid="uid://c8tspi3v4p5l2" path="res://images/Explosions/regularExplosion00.png" id="1_g154x"]
+[ext_resource type="Texture2D" uid="uid://cxtkcednpb0e3" path="res://images/Explosions/regularExplosion01.png" id="2_44lo0"]
+[ext_resource type="Texture2D" uid="uid://dmege0ku5jpc0" path="res://images/Explosions/regularExplosion02.png" id="3_g2fvm"]
+[ext_resource type="Texture2D" uid="uid://bvxaaqoa4ynxu" path="res://images/Explosions/regularExplosion03.png" id="4_wg2tn"]
+[ext_resource type="Texture2D" uid="uid://bd7cb1aqqu0ru" path="res://images/Explosions/regularExplosion04.png" id="5_app2m"]
+[ext_resource type="Texture2D" uid="uid://dg6er56hhaud8" path="res://images/Explosions/regularExplosion05.png" id="6_weyk8"]
+[ext_resource type="Texture2D" uid="uid://diyhda154uur8" path="res://images/Explosions/regularExplosion06.png" id="7_okfxv"]
+[ext_resource type="Texture2D" uid="uid://bsqhtytyho3te" path="res://images/Explosions/regularExplosion07.png" id="8_dnd74"]
+[ext_resource type="Texture2D" uid="uid://cf40lkavjpyot" path="res://images/Explosions/regularExplosion08.png" id="9_w3bly"]
+[ext_resource type="Script" path="res://plane/explosion.gd" id="10_45b6h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_438lv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g154x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_44lo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g2fvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wg2tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_app2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_weyk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_okfxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dnd74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w3bly")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 10.0
+}]
+
+[node name="Explosion" type="Node2D"]
+script = ExtResource("10_45b6h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_438lv")
+animation = &"explosion"

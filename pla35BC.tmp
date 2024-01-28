@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://nph44dttik2k"]
+
+[ext_resource type="Script" path="res://plane.gd" id="1_d7i8q"]
+[ext_resource type="Texture2D" uid="uid://btgb50dbgh8pk" path="res://images/player2.png" id="1_okj74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yicqj"]
+size = Vector2(62, 11)
+
+[node name="Plane" type="CharacterBody2D"]
+script = ExtResource("1_d7i8q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_okj74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_yicqj")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
