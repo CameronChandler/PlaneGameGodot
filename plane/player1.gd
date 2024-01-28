@@ -36,14 +36,12 @@ func _ready():
 	$BulletTimer.timeout.connect(_shoot)
 
 func _lost_plane() -> void:
-	print('lost')
 	var middle = get_viewport_rect().position / 2.0
 	rotation = position.direction_to(middle).angle()
 	flat_motion = false
 	$LostPlaneTimer.start
 
 func _turnaround() -> void:
-	print('Turnaround')
 	if global_position.x < 0:
 		rotation = 0
 		flat_motion = true

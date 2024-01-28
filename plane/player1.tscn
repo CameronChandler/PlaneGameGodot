@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://nph44dttik2k"]
+[gd_scene load_steps=5 format=3 uid="uid://nph44dttik2k"]
 
-[ext_resource type="Script" path="res://plane/plane.gd" id="1_d7i8q"]
+[ext_resource type="Script" path="res://plane/player1.gd" id="1_d7i8q"]
 [ext_resource type="Texture2D" uid="uid://btgb50dbgh8pk" path="res://images/player2.png" id="1_okj74"]
+[ext_resource type="Script" path="res://plane/HealthComponent.gd" id="3_n6ww4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl00i"]
 size = Vector2(62, 11)
 
-[node name="Plane" type="CharacterBody2D"]
+[node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_d7i8q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,7 +17,6 @@ texture = ExtResource("1_okj74")
 
 [node name="BulletMarker" type="Marker2D" parent="Sprite2D"]
 position = Vector2(89, 5)
-scale = Vector2(1, 1)
 
 [node name="OffScreenTimer" type="Timer" parent="."]
 wait_time = 0.6
@@ -35,3 +35,6 @@ shape = SubResource("RectangleShape2D_gl00i")
 [node name="BulletTimer" type="Timer" parent="."]
 wait_time = 0.15
 autostart = true
+
+[node name="HealthComponent" type="Node2D" parent="."]
+script = ExtResource("3_n6ww4")
