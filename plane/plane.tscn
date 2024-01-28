@@ -28,3 +28,10 @@ one_shot = true
 position = Vector2(0, 0.5)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gl00i")
+
+[node name="BulletTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="BulletMarker" type="Marker2D" parent="."]
+position = Vector2(31.15, 1.75)
+scale = Vector2(0.35, 0.35)
